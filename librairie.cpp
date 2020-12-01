@@ -14,8 +14,13 @@ ostream& operator<<(ostream& os, const Matrix& matrix){
 ostream& operator<<(ostream& os, const Line& line){
    cout << "(";
 
-   for (vector<int>::const_iterator it = line.begin() ; it != line.end(); ++it)
-      std::cout << " " << *it;
+   for (vector<int>::const_iterator it = line.begin() ; it != line.end(); ++it){
+
+      std::cout << *it;
+
+      if(next(it) != line.end())
+         cout << ", ";
+   }
 
    cout << ")";
 }

@@ -22,11 +22,6 @@ int main() {
    cout << "Max length is " << maxCol(m1) << endl;
    cout << "Max length is " << maxCol(m2) << endl;
 
-   cout << m2.size();
-
-   sumLines(m1);
-   cout << endl << endl;
-   cout << "ksksksksks";
    cout << l1;
 
    return 0;
