@@ -47,7 +47,7 @@ ostream& operator<<(ostream& os, const Line& line){
 bool isSquare(Matrix matrix){
    const size_t MAT_SIZE = matrix.size();
 
-   //Check if every line in the matrix has the same length than the height of the matrix
+   //Check if every line in the matrix has the same length as the height of the matrix
    for(Line l : matrix){
       if(l.size() != MAT_SIZE)
          return false;

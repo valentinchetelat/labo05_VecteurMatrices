@@ -19,7 +19,7 @@ using Matrix   = std::vector<Line>;
  * PROTOTYPES
  * **************************************************/
 /**
- * Operator << for displaying Matrices
+ * Operator << to display Matrices
  * @param os
  * @param matrix
  * @return
@@ -27,7 +27,7 @@ using Matrix   = std::vector<Line>;
 std::ostream& operator<<(std::ostream& os, const Matrix& matrix);
 
 /**
- * Operator << for displaying Lines of matrices
+ * Operator << to display Lines of matrices
  * @param os
  * @param line
  * @return
