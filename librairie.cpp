@@ -8,16 +8,32 @@ using namespace std;
  * OPERATORS
  * **************************************************/
 ostream& operator<<(ostream& os, const Matrix& matrix){
+   cout << "[";
 
+   //For each value in the line
+   for (Matrix::const_iterator it = matrix.begin(); it != matrix.end(); ++it){
+
+      //Print the value
+      std::cout << *it;
+
+      //Print the , after each value
+      if(next(it) != matrix.end())
+         cout << ", ";
+   }
+
+   cout << "]";
 }
 
 ostream& operator<<(ostream& os, const Line& line){
    cout << "(";
 
-   for (vector<int>::const_iterator it = line.begin() ; it != line.end(); ++it){
+   //For each value in the line
+   for (Line::const_iterator it = line.begin(); it != line.end(); ++it){
 
+      //Print the value
       std::cout << *it;
 
+      //Print the , after each value
       if(next(it) != line.end())
          cout << ", ";
    }
