@@ -14,10 +14,10 @@ ostream& operator<<(ostream& os, const Matrix& matrix){
    for (Matrix::const_iterator it = matrix.begin(); it != matrix.end(); ++it){
 
       //Print the value
-      std::cout << *it;
+      cout << *it;
 
       //Print the , after each value
-      if(next(it) != matrix.end())
+      if(it != matrix.begin())
          cout << ", ";
    }
 
@@ -31,10 +31,10 @@ ostream& operator<<(ostream& os, const Line& line){
    for (Line::const_iterator it = line.begin(); it != line.end(); ++it){
 
       //Print the value
-      std::cout << *it;
+      cout << *it;
 
       //Print the , after each value
-      if(next(it) != line.end())
+      if(it != line.begin())
          cout << ", ";
    }
 
@@ -80,6 +80,7 @@ size_t maxCol(Matrix matrix){
 }
 
 Line sumLines(Matrix matrix){
+
 }
 
 Line vectSumMin(Matrix matrix){
