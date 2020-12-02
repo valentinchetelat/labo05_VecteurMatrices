@@ -59,6 +59,13 @@ bool isRegular(Matrix matrix){
    //An empty matrix is regular
    if(matrix.empty())
       return true;
+
+   for (int i = 0; i < matrix.size(); i++){
+      if(!(matrix[i].size() == matrix[1].size()))
+         return false;
+   }
+   return true;
+
 }
 
 size_t maxCol(Matrix matrix){

@@ -12,6 +12,8 @@ int main() {
    Matrix m1   {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
    Matrix m2   {{1, 2, 3}, {4, 5, 6}, {7, 8, 9, 10, 11, 12, 13}};
 
+   cout << isRegular(m2);
+
    cout << "Is square   ? " << isSquare(m1) << endl;
 
    sumDiagLR(m1, result);
