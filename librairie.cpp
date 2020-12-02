@@ -17,7 +17,7 @@ ostream& operator<<(ostream& os, const Matrix& matrix){
       cout << *it;
 
       //Print the , after each value
-      if(it != matrix.begin())
+      if(next(it) != matrix.end())
          cout << ", ";
    }
 
@@ -34,7 +34,7 @@ ostream& operator<<(ostream& os, const Line& line){
       cout << *it;
 
       //Print the , after each value
-      if(it != line.begin())
+      if(next(it) != line.end())
          cout << ", ";
    }
 
