@@ -79,7 +79,15 @@ size_t maxCol(Matrix matrix){
 }
 
 Line sumLines(Matrix matrix){
+   Line result;
 
+   //For each line
+   for(Line l : matrix){
+      //Sum the elements
+      result.push_back(accumulate(l.begin(), l.end(), 0));
+   }
+
+   return result;
 }
 
 Line vectSumMin(Matrix matrix){

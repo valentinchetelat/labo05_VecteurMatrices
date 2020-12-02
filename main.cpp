@@ -25,5 +25,7 @@ int main() {
    cout << l1;
    cout << m2;
 
+   cout << endl << endl << sumLines(m1);
+
    return 0;
 }
