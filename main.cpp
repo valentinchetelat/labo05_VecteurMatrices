@@ -14,9 +14,9 @@ int main() {
 
    cout << "Is square   ? " << isSquare(m1) << endl;
 
-   sumDiagGD(m1, result);
+   sumDiagLR(m1, result);
    cout << "Sum \\ diag  : " << result << endl;
-   sumDiagDG(m1, result);
+   sumDiagRL(m1, result);
    cout << "Sum / diag  : " << result << endl;
 
    cout << "Max length is " << maxCol(m1) << endl;

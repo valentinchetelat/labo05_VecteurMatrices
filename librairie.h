@@ -89,7 +89,7 @@ void sortMatrice(Matrix& matrix);
  * @param sumResult
  * @return
  */
-bool sumDiagDG(Matrix matrix, int& sumResult);
+bool sumDiagRL(Matrix matrix, int& sumResult);
 
 /**
  * Sum all elements of the \ (top left to bottom right) diagonal of a matrix
@@ -97,7 +97,7 @@ bool sumDiagDG(Matrix matrix, int& sumResult);
  * @param sumResult
  * @return
  */
-bool sumDiagGD(Matrix matrix, int& sumResult);
+bool sumDiagLR(Matrix matrix, int& sumResult);
 
 
 

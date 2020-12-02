@@ -27,13 +27,12 @@ ostream& operator<<(ostream& os, const Matrix& matrix){
 ostream& operator<<(ostream& os, const Line& line){
    cout << "(";
 
-   //For each value in the line
    for (Line::const_iterator it = line.begin(); it != line.end(); ++it){
 
       //Print the value
       cout << *it;
 
-      //Print the , after each value
+      //Print the , after each value except the last
       if(next(it) != line.end())
          cout << ", ";
    }
@@ -95,7 +94,7 @@ void sortMatrice(Matrix& matrix){
 
 }
 
-bool sumDiagDG(Matrix matrix, int& sumResult){
+bool sumDiagRL(Matrix matrix, int& sumResult){
    //If the matrix is not square then return false immediately
    if(!isSquare(matrix))
       return false;
@@ -121,7 +120,7 @@ bool sumDiagDG(Matrix matrix, int& sumResult){
    return true;
 }
 
-bool sumDiagGD(Matrix matrix, int& sumResult){
+bool sumDiagLR(Matrix matrix, int& sumResult){
    //If the matrix is not square then return false immediately
    if(!isSquare(matrix))
       return false;
