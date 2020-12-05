@@ -24,6 +24,8 @@ int main() {
    cout << "Max length is " << maxCol(m1) << endl;
    cout << "Max length is " << maxCol(m2) << endl;
 
+   cout << "blblbl" << vectSumMin(m1) << endl;
+
    cout << l1;
    cout << m2;
 
