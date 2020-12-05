@@ -9,8 +9,12 @@ int main() {
    Line l1     {1, 2, 3};
    Line l2     {4, 5, 6};
    Line l3     {7, 8, 9};
+   Line l4     {4, 4};
+   Line l5     {1, 3};
+   Line l6     {2};
    Matrix m1   {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
    Matrix m2   {{1, 2, 3}, {4, 5, 6}, {7, 8, 9, 10, 11, 12, 13}};
+   Matrix m3   {{4, 4}, {1, 3}, {2}};
 
    cout << isRegular(m2);
 
@@ -30,6 +34,14 @@ int main() {
    cout << m2;
 
    cout << endl << endl << sumLines(m1);
+
+   cout << endl << endl;
+   cout << sumLines(m2);
+
+   cout << endl << endl;
+   cout << m1 << endl;
+   shuffleMatrix(m1);
+   cout << m1;
 
    return 0;
 }

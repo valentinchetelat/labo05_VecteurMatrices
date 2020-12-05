@@ -54,14 +54,14 @@ bool isRegular(Matrix matrix);
  * @param matrix
  * @return
  */
-size_t maxCol(Matrix matrix);
+size_t maxCol(const Matrix& matrix);
 
 /**
  * Return a vector with the sum of all the lines of the matrix
  * @param matrix
  * @return
  */
-Line sumLines(Matrix matrix);
+Line sumLines(const Matrix& matrix);
 
 /**
  * Return the line of the matrix for which the sum of all elements is the smallest of the matrix
@@ -74,7 +74,7 @@ Line vectSumMin(Matrix matrix);
  * Shuffle the order of the lines in the matrix
  * @param matrix
  */
-void shuffleMatrice(Matrix& matrix);
+void shuffleMatrix(Matrix& matrix);
 
 /**
  * Sort the matrix depending on the biggest element of each line

@@ -1,8 +1,15 @@
 #include <ostream>
 #include <iostream>
+#include <chrono>
+#include <random>
 #include "librairie.h"
 
 using namespace std;
+
+/* **************************************************
+ * PROTOTYPES
+ * **************************************************/
+int sumLine(const Line& line);
 
 /* **************************************************
  * OPERATORS
@@ -68,7 +75,7 @@ bool isRegular(Matrix matrix){
 
 }
 
-size_t maxCol(Matrix matrix){
+size_t maxCol(const Matrix& matrix){
    size_t maxLength     = 0;
    size_t currentLength;
 
@@ -85,14 +92,11 @@ size_t maxCol(Matrix matrix){
    return maxLength;
 }
 
-Line sumLines(Matrix matrix){
-   Line result;
+Line sumLines(const Matrix& matrix){
+   Line result(matrix.size());
 
    //For each line
-   for(Line l : matrix){
-      //Sum the elements
-      result.push_back(accumulate(l.begin(), l.end(), 0));
-   }
+   transform(matrix.begin(), matrix.end(), result.begin(), sumLine);
 
    return result;
 }
@@ -113,15 +117,16 @@ Line vectSumMin(Matrix matrix){
 }
 
 
-void shuffleMatrice(Matrix& matrix){
-
+void shuffleMatrix(Matrix& matrix){
+   unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+   shuffle (matrix.begin(), matrix.end(), default_random_engine(seed));
 }
 
 bool compare(Line& a, Line& b){
     return max_element(a.begin(), a.end()) > max_element(b.begin(), b.end());
 }
 
-void sortMatrice(Matrix& matrix){
+void sortMatrix(Matrix& matrix){
    sort(matrix.begin(), matrix.end(), compare);
 }
 
@@ -137,16 +142,7 @@ bool sumDiagRL(Matrix matrix, int& sumResult){
 
    //The matrix is square so i and j have the same limit (SIZE)
    for(size_t i = 0; i < SIZE; ++i){
-      for(size_t j = 0; j < SIZE; ++j){
-         //If the element is from the / diagonal
-         if ((i + j) == (SIZE - 1)){
-            //Add the value to the result
-            sumResult += matrix[i][j];
-
-            //We can skip the rest of the line
-            break;
-         }
-      }
+      sumResult += matrix[i][matrix.size() - i - 1];
    }
 
    return true;
@@ -168,4 +164,8 @@ bool sumDiagLR(Matrix matrix, int& sumResult){
    }
 
    return true;
+}
+
+int sumLine(const Line& line){
+   return accumulate(line.begin(), line.end(), 0);
 }
