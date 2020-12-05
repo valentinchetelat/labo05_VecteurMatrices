@@ -29,7 +29,7 @@ int main() {
    cout << "Max length is " << maxCol(m2) << endl;
 
    cout << "blblbl" << vectSumMin(m1) << endl;
-   sortMatrice(m2);
+   sortMatrix(m2);
    cout << l1;
    cout << m2;
 

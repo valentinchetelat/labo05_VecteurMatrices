@@ -81,7 +81,7 @@ void shuffleMatrix(Matrix& matrix);
  * ex: [(4, 4), (1, 3), (2)] -> [(4,4), (1, 3), (2)]
  * @param matrix
  */
-void sortMatrice(Matrix& matrix);
+void sortMatrix(Matrix& matrix);
 
 /**
  * Sum all elements of the / (top right to bottom left) diagonal of a matrix
