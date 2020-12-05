@@ -86,12 +86,11 @@ Line vectSumMin(Matrix matrix){
    int somme = 0;
    Line vector;
    for(Line l : matrix){
-         if( somme > accumulate(l.begin(),l.end(),0) || somme == 0){
-            somme = accumulate(l.begin(),l.end(),0);
-            vector = l;
-         }
-         else if (somme == accumulate(l.begin(),l.end(),0) && vector.size() > l.size()){
-            vector = l;
+         if((somme > accumulate(l.begin(),l.end(),0) || somme == 0) ||
+            (somme == accumulate(l.begin(),l.end(),0) && vector.size() > l.size())){
+
+               somme = accumulate(l.begin(),l.end(),0);
+               vector = l;
          }
       }
    return vector;
