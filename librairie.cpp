@@ -9,7 +9,10 @@ using namespace std;
 /* **************************************************
  * PROTOTYPES
  * **************************************************/
-int sumLine(const Line& line);
+int      sumLine(const Line& line);
+bool     compare(Line& a, Line& b);
+size_t   sizeOfVector(const Line& line);
+size_t   compareSizeVectors(const Line& l1, const Line& l2);
 
 /* **************************************************
  * OPERATORS
@@ -51,15 +54,8 @@ ostream& operator<<(ostream& os, const Line& line){
  * FUNCTIONS
  * **************************************************/
 bool isSquare(Matrix matrix){
-   const size_t MAT_SIZE = matrix.size();
-
-   //Check if every line in the matrix has the same length as the height of the matrix
-   for(Line l : matrix){
-      if(l.size() != MAT_SIZE)
-         return false;
-   }
-
-   return true;
+   return matrix.empty() ||
+          isRegular(matrix) && matrix[0].size() == matrix.size();
 }
 
 bool isRegular(Matrix matrix){
@@ -67,35 +63,20 @@ bool isRegular(Matrix matrix){
    if(matrix.empty())
       return true;
 
-   for (int i = 0; i < matrix.size(); i++){
-      if(matrix[i].size() != matrix[1].size())
-         return false;
-   }
-   return true;
+   Line result(matrix.size());
 
+   transform(matrix.begin(), matrix.end(), result.begin(), sizeOfVector);
+
+   return count(result.begin(), result.end(), result[0]) == matrix.size();
 }
 
 size_t maxCol(const Matrix& matrix){
-   size_t maxLength     = 0;
-   size_t currentLength;
-
-   //For each line of the matrix
-   for(Line l : matrix){
-      //Get its size
-      currentLength = distance(l.begin(), l.end());
-      //If it's bigger than the max
-      if(currentLength > maxLength)
-         //Update the max
-         maxLength = currentLength;
-   }
-
-   return maxLength;
+   return (*max_element(matrix.begin(), matrix.end(), compareSizeVectors)).size();
 }
 
 Line sumLines(const Matrix& matrix){
    Line result(matrix.size());
 
-   //For each line
    transform(matrix.begin(), matrix.end(), result.begin(), sumLine);
 
    return result;
@@ -122,14 +103,9 @@ void shuffleMatrix(Matrix& matrix){
    shuffle (matrix.begin(), matrix.end(), default_random_engine(seed));
 }
 
-bool compare(Line& a, Line& b){
-    return max_element(a.begin(), a.end()) > max_element(b.begin(), b.end());
-}
-
 void sortMatrix(Matrix& matrix){
    sort(matrix.begin(), matrix.end(), compare);
 }
-
 
 bool sumDiagRL(Matrix matrix, int& sumResult){
    //If the matrix is not square then return false immediately
@@ -166,6 +142,21 @@ bool sumDiagLR(Matrix matrix, int& sumResult){
    return true;
 }
 
+/* **************************************************
+ * UTILITIES
+ * **************************************************/
 int sumLine(const Line& line){
    return accumulate(line.begin(), line.end(), 0);
+}
+
+bool compare(Line& a, Line& b){
+   return max_element(a.begin(), a.end()) > max_element(b.begin(), b.end());
+}
+
+size_t sizeOfVector(const Line& line){
+   return line.size();
+}
+
+size_t compareSizeVectors(const Line& l1, const Line& l2){
+   return l1.size() < l2.size();
 }

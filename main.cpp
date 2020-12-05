@@ -16,32 +16,7 @@ int main() {
    Matrix m2   {{1, 2, 3}, {4, 5, 6}, {7, 8, 9, 10, 11, 12, 13}};
    Matrix m3   {{4, 4}, {1, 3}, {2}};
 
-   cout << isRegular(m2);
-
-   cout << "Is square   ? " << isSquare(m1) << endl;
-
-   sumDiagLR(m1, result);
-   cout << "Sum \\ diag  : " << result << endl;
-   sumDiagRL(m1, result);
-   cout << "Sum / diag  : " << result << endl;
-
-   cout << "Max length is " << maxCol(m1) << endl;
-   cout << "Max length is " << maxCol(m2) << endl;
-
-   cout << "blblbl" << vectSumMin(m1) << endl;
-   sortMatrix(m2);
-   cout << l1;
-   cout << m2;
-
-   cout << endl << endl << sumLines(m1);
-
-   cout << endl << endl;
-   cout << sumLines(m2);
-
-   cout << endl << endl;
-   cout << m1 << endl;
-   shuffleMatrix(m1);
-   cout << m1;
+   cout << maxCol(m2);
 
    return 0;
 }
