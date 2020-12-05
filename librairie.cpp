@@ -101,7 +101,6 @@ Line vectSumMin(Matrix matrix){
    int somme = 0;
    Line vector;
    for(Line l : matrix){
-      cout << "coucou";
          if( somme > accumulate(l.begin(),l.end(),0) || somme == 0){
             somme = accumulate(l.begin(),l.end(),0);
             vector = l;
@@ -118,9 +117,14 @@ void shuffleMatrice(Matrix& matrix){
 
 }
 
-void sortMatrice(Matrix& matrix){
-
+bool compare(Line& a, Line& b){
+    return max_element(a.begin(), a.end()) > max_element(b.begin(), b.end());
 }
+
+void sortMatrice(Matrix& matrix){
+   sort(matrix.begin(), matrix.end(), compare);
+}
+
 
 bool sumDiagRL(Matrix matrix, int& sumResult){
    //If the matrix is not square then return false immediately
