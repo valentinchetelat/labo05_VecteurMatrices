@@ -1,3 +1,14 @@
+/*
+ ---------------------------------------------------------------------------
+ File            : librairie.cpp
+ Laboratory name : Vecteur
+ Authors         : Sarah Jallon & Valentin Chételat
+ Date            : 06.12.2020
+ Purpose         : This file contains the definitons of the functions
+ Compiler        : MinGW-W64 g++ 8.1.0
+ ---------------------------------------------------------------------------
+*/
+
 #include <ostream>
 #include <iostream>
 #include <chrono>
@@ -83,17 +94,8 @@ Line sumLines(const Matrix& matrix){
 }
 
 Line vectSumMin(Matrix matrix){
-   int somme = 0;
-   Line vector;
-   for(Line l : matrix){
-         if((somme > accumulate(l.begin(),l.end(),0) || somme == 0) ||
-            (somme == accumulate(l.begin(),l.end(),0) && vector.size() > l.size())){
-
-               somme = accumulate(l.begin(),l.end(),0);
-               vector = l;
-         }
-      }
-   return vector;
+   Line vector = sumLines(matrix);
+   return matrix.at(min_element(vector.begin(), vector.end())-vector.begin());
 }
 
 
@@ -149,7 +151,7 @@ int sumLine(const Line& line){
 }
 
 bool compare(Line& a, Line& b){
-   return max_element(a.begin(), a.end()) > max_element(b.begin(), b.end());
+   return *(max_element(a.begin(), a.end())) > *(max_element(b.begin(), b.end()));
 }
 
 size_t sizeOfVector(const Line& line){

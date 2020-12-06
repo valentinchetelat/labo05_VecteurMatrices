@@ -1,3 +1,16 @@
+/*
+ ---------------------------------------------------------------------------
+ File            : librairie.h
+ Laboratory name : Vecteur
+ Authors         : Sarah Jallon & Valentin Chételat
+ Date            : 06.12.2020
+ Purpose         : This file is the header of our library
+ Comment(s)      : The functions explanations are in this file
+ Compiler        : MinGW-W64 g++ 8.1.0
+ ---------------------------------------------------------------------------
+*/
+
+
 #ifndef LABO_05_VECTEURMATRICES_LIBRAIRIE_H
 #define LABO_05_VECTEURMATRICES_LIBRAIRIE_H
 
@@ -98,8 +111,5 @@ bool sumDiagRL(Matrix matrix, int& sumResult);
  * @return
  */
 bool sumDiagLR(Matrix matrix, int& sumResult);
-
-
-
 
 #endif //LABO_05_VECTEURMATRICES_LIBRAIRIE_H

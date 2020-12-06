@@ -49,7 +49,7 @@ int main() {
 
    // ----------------------------------------------------------------------------------------------
 
-   cout << "-------------- function maxCol--------------" << endl << endl;
+   cout << "-------------- function maxCol --------------" << endl << endl;
    displayMaxCol(m1);
    displayMaxCol(m2);
    displayMaxCol(m3);
@@ -57,7 +57,7 @@ int main() {
 
    // ----------------------------------------------------------------------------------------------
 
-   cout << "-------------- function sumLines--------------" << endl << endl;
+   cout << "-------------- function sumLines --------------" << endl << endl;
    displaySumLines(m1);
    displaySumLines(m2);
    displaySumLines(m3);
@@ -72,7 +72,7 @@ int main() {
    int sumResultRightToLeftDiagM1;
    int sumResultRightToLeftDiagM2;
 
-   cout << "-------------- functions SumDiag--------------" << endl << endl;
+   cout << "-------------- functions SumDiag --------------" << endl << endl;
    displaySumDiagLR(m1, sumResultLeftToRightDiagM1);
    displaySumDiagLR(m2, sumResultLeftToRightDiagM2);
    cout << endl;
@@ -83,7 +83,7 @@ int main() {
 
    // ----------------------------------------------------------------------------------------------
 
-   cout << "-------------- function VectSumMin--------------" << endl << endl;
+   cout << "-------------- function VectSumMin --------------" << endl << endl;
    displayVectSumMin(m1);
    displayVectSumMin(m2);
    displayVectSumMin(m3);
@@ -91,7 +91,7 @@ int main() {
 
    // ----------------------------------------------------------------------------------------------
 
-   cout << "-------------- function shuffleMatrix--------------" << endl << endl;
+   cout << "-------------- function shuffleMatrix --------------" << endl << endl;
    displayShuffledMatrix(m1);
    displayShuffledMatrix(m2);
    displayShuffledMatrix(m3);
@@ -99,7 +99,7 @@ int main() {
 
    // ----------------------------------------------------------------------------------------------
 
-   cout << "-------------- function sortMatrix--------------" << endl << endl;
+   cout << "-------------- function sortMatrix --------------" << endl << endl;
    displaySortedMatrix(m1);
    displaySortedMatrix(m2);
    displaySortedMatrix(m3);
