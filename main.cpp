@@ -5,9 +5,9 @@
  Authors         : Sarah Jallon & Valentin Chételat
  Date            : 06.12.2020
  Purpose         : This program's purpose is to prove the good operation of library.cpp.
-                   This program displays the properties of a chosen Matrix, and also does
+                   This program displays the properties of chosen Matrices, and also does
                    a bunch of operations on Matrices.
- Comment(s)      :
+ Comment(s)      : This program does not include interactions with the user.
  Compiler        : MinGW-W64 g++ 8.1.0
  ---------------------------------------------------------------------------
 */
@@ -26,8 +26,6 @@ void displaySortedMatrix(Matrix& m);
 void displaySumDiagLR(const Matrix& m, int& sumResult);
 void displaySumDiagRL(const Matrix& m, int& sumResult);
 
-
-
 int main() {
    Line l1     {1, 2, 3};
    Line l2     {4, 5, 6};
@@ -41,25 +39,71 @@ int main() {
    Matrix m2   {l1, l2, l3, l4, l7};
    Matrix m3   {l4, l5, l6};
 
-   //test functions "operator <<", isSquare,  is Regular
+   // ----------------------------------------------------------------------------------------------
+
+   cout << "-------------- functions operator <<, isSquare,  is Regular --------------" << endl << endl;
    displayMatrixProperties(m1);
    displayMatrixProperties(m2);
    displayMatrixProperties(m3);
+   cout << endl;
 
+   // ----------------------------------------------------------------------------------------------
+
+   cout << "-------------- function maxCol--------------" << endl << endl;
    displayMaxCol(m1);
+   displayMaxCol(m2);
+   displayMaxCol(m3);
+   cout << endl;
 
+   // ----------------------------------------------------------------------------------------------
+
+   cout << "-------------- function sumLines--------------" << endl << endl;
+   displaySumLines(m1);
    displaySumLines(m2);
+   displaySumLines(m3);
+   cout << endl;
 
-   displayVectSumMin(m1);
-
-   displayShuffledMatrix(m2);
-
-   displaySortedMatrix(m2);
+   // ----------------------------------------------------------------------------------------------
+   // init of the sum variables
 
    int sumResultLeftToRightDiagM1;
+   int sumResultLeftToRightDiagM2;
+
+   int sumResultRightToLeftDiagM1;
    int sumResultRightToLeftDiagM2;
+
+   cout << "-------------- functions SumDiag--------------" << endl << endl;
    displaySumDiagLR(m1, sumResultLeftToRightDiagM1);
+   displaySumDiagLR(m2, sumResultLeftToRightDiagM2);
+   cout << endl;
+
+   displaySumDiagRL(m1, sumResultRightToLeftDiagM1);
    displaySumDiagRL(m2, sumResultRightToLeftDiagM2);
+   cout << endl;
+
+   // ----------------------------------------------------------------------------------------------
+
+   cout << "-------------- function VectSumMin--------------" << endl << endl;
+   displayVectSumMin(m1);
+   displayVectSumMin(m2);
+   displayVectSumMin(m3);
+   cout << endl;
+
+   // ----------------------------------------------------------------------------------------------
+
+   cout << "-------------- function shuffleMatrix--------------" << endl << endl;
+   displayShuffledMatrix(m1);
+   displayShuffledMatrix(m2);
+   displayShuffledMatrix(m3);
+   cout << endl;
+
+   // ----------------------------------------------------------------------------------------------
+
+   cout << "-------------- function sortMatrix--------------" << endl << endl;
+   displaySortedMatrix(m1);
+   displaySortedMatrix(m2);
+   displaySortedMatrix(m3);
+   cout << endl;
 
    // ----------------------------------------------------------------------------------------------
    //end of program
@@ -104,7 +148,7 @@ void displaySumDiagLR(const Matrix& m, int& sumResult){
       cout << "The left to right diagonal sum of " << m << " is: " << sumResult << endl;
    }
    else {
-      cout << "The matrix " << m << " has no diagonal.";
+      cout << "The matrix " << m << " has no diagonal." << endl;
    }
 }
 void displaySumDiagRL(const Matrix& m, int& sumResult){
@@ -112,7 +156,7 @@ void displaySumDiagRL(const Matrix& m, int& sumResult){
       cout << "The right to left diagonal sum of " << m << " is: " <<  sumResult << endl;
    }
    else {
-      cout << "The matrix " << m << " has no diagonal.";
+      cout << "The matrix " << m << " has no diagonal." << endl;
    }
 
 }
